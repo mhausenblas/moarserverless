@@ -1,10 +1,18 @@
-# fortune serverless
+# fortune Lambda
 
 
 In order to build the app, clone this repo and work in the `aws/` subdirectory. Also, make sure you've got the `aws` CLI and the [SAM CLI](https://github.com/awslabs/aws-sam-cli) installed.
 
 ## Preparation
 
+Set up the S3 bucket holding the Lambda function:
+
+```bash
+$ aws s3api create-bucket \
+      --bucket mh9-fortune-app \
+      --create-bucket-configuration LocationConstraint=eu-west-1 \
+      --region eu-west-1
+```
 
 ## Lambda functions and HTTP API
 

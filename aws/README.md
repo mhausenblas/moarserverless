@@ -1,6 +1,5 @@
 # fortune Lambda
 
-
 In order to build the app, clone this repo and work in the `aws/` subdirectory. Also, make sure you've got the `aws` CLI and the [SAM CLI](https://github.com/awslabs/aws-sam-cli) installed.
 
 ## Preparation
@@ -22,7 +21,7 @@ How to build and deploy the Lambda functions and a HTTP API with [SAM](https://g
 
 To get started I did `sam init --name app --runtime go1.x` initially and developed the function. In order for the local simulation to work, you need to have Docker running. Note: Local testing the API is at time of writing limited, since [CORS is locally not supported](https://github.com/awslabs/aws-sam-cli/issues/323), yet.
 
-For each code iteration, in `app/` do:
+For each code iteration do:
 
 ```bash
 # 1. run emulation of Lambda and API Gateway locally (via Docker):
@@ -38,7 +37,7 @@ If you change anything in the SAM/CF [template file](template.yaml) then you nee
 
 ### Development and deployment in live environment
 
-For each code iteration, in `app/` do a `make deploy`.
+For each code iteration execute `make deploy` and then:
 
 ```bash
 # get the HTTP API endpoint:
